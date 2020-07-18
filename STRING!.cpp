@@ -1,7 +1,7 @@
 ﻿
 #include <iostream>
 using namespace std;
-
+//моя реализация класса string
 class String
 {
 private:
