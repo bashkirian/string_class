@@ -12,7 +12,7 @@ class String
     {
         str = nullptr;
     }
-    String(const char *str)
+    String(const char* str)
     {
         length = strlen(str);
         this->str = new char[length + 1];
@@ -23,14 +23,14 @@ class String
         }
         this->str[length] = '\0';
     }
-    String(const char *str, int k)
+    String(const char* str, int n)
     {
-        length = k;
-        for (int i = 0; i < k; i++)
+        this->str = new char[n + 1];
+        for (int i = 0; i < n; i++)
         {
             this->str[i] = str[0];
         }
-        this->str[k] = '\0';
+        this->str[n] = '\0';
     }
     void Print()
     {
@@ -44,9 +44,18 @@ class String
 
 int main()
 {
-    char s[256];
-    cin.getline(s,256);
-    String str("Hello World!");
-    str.Print();
+    char s1[256], s2[2];
+    int n;
+    cout << "//////////////" << endl << "Enter the string to demonstrate the first conctructor" << endl;
+    cin.getline(s1,256);
+    String str1(s1);
+    str1.Print();
+    cout << "//////////////" << endl << "Enter number and then character to demonstrate the second conctructor" << endl;
+    cin >> n;
+    cin.get();
+    cin >> s2;
+    String str2(s2, n);
+    str2.Print();
+    cout << "//////////////" << endl;
     return 0;
 }
