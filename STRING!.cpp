@@ -1,21 +1,31 @@
 ﻿
 #include <iostream>
 using namespace std;
-//моя реализация класса string
+//my realization of c++ string class
 class String
 {
-private:
-    int size;
-    char str[255];
-public:
-    String(char str[])
+  private:
+    int length;
+    char* str;
+  public:
+    String()
     {
-        size = strlen(str);
-        strcpy_s(this->str, str);
+        str = nullptr;
     }
-    String(char str[], int k)
+    String(const char *str)
     {
-        size = k;
+        length = strlen(str);
+        this->str = new char[length + 1];
+        
+        for (int i = 0; i < length; i++)
+        {
+            this->str[i] = str[i];
+        }
+        this->str[length] = '\0';
+    }
+    String(const char *str, int k)
+    {
+        length = k;
         for (int i = 0; i < k; i++)
         {
             this->str[i] = str[0];
@@ -28,19 +38,15 @@ public:
     }
     ~String()
     {
-        delete[] str;
+        delete[] this->str;
     }
 };
 
 int main()
 {
-    char *string1;
-    cin >> string1;
-    String st1(string1);
-    st1.Print();
-    char string2[1];
-    cin >> string2;
-    String st2(string2, 5);
-    st2.Print();
+    char s[256];
+    cin.getline(s,256);
+    String str("Hello World!");
+    str.Print();
     return 0;
 }
