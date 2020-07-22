@@ -1,2 +1,10 @@
 ﻿  STRING!.cpp
+C:\Users\МПаттон\Desktop\STRING!\STRING!.cpp(112,62): warning C4101: s7: неиспользованная локальная переменная
+C:\Users\МПаттон\Desktop\STRING!\STRING!.cpp(112,19): warning C4101: s2: неиспользованная локальная переменная
+C:\Users\МПаттон\Desktop\STRING!\STRING!.cpp(112,44): warning C4101: s5: неиспользованная локальная переменная
+C:\Users\МПаттон\Desktop\STRING!\STRING!.cpp(112,53): warning C4101: s6: неиспользованная локальная переменная
+C:\Users\МПаттон\Desktop\STRING!\STRING!.cpp(112,10): warning C4101: s1: неиспользованная локальная переменная
+C:\Users\МПаттон\Desktop\STRING!\STRING!.cpp(112,26): warning C4101: s3: неиспользованная локальная переменная
+C:\Users\МПаттон\Desktop\STRING!\STRING!.cpp(113,9): warning C4101: n: неиспользованная локальная переменная
+C:\Users\МПаттон\Desktop\STRING!\STRING!.cpp(112,35): warning C4101: s4: неиспользованная локальная переменная
   STRING!.vcxproj -> C:\Users\МПаттон\Desktop\STRING!\Debug\STRING!.exe
