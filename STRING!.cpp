@@ -62,7 +62,7 @@ class String
     
     bool operator == (const String& other)
     {
-        if (this->length != other.length) return 0;
+        if (this->length != other.length) return false;
         else
         {
             for (int i = 0; i < this->length; i++)
@@ -70,9 +70,16 @@ class String
                 if (this->str[i] != other.str[i]) break;
             }
         }
-        return 1;
+        return true;
     }
 
+    bool operator != (const String& other)
+    {
+        return !(this->operator == (other));
+    }
+
+    friend ostream& operator<< (ostream& out, const String& str);
+    
     String& operator + (const String& other)
     {
         if (other.str == nullptr) return *this;
@@ -96,16 +103,17 @@ class String
         }
     }
 
-    void Print()
-    {
-        cout << str << endl;
-    }
-
     ~String()
     {
         delete[] this->str;
     }
 };
+
+ostream& operator<< (ostream& out, const String& stri) {
+    out << stri.str;
+    return out;
+}
+
 
 int main()
 {
@@ -114,21 +122,21 @@ int main()
     cout << "Enter the string to demonstrate the first conctructor:" << endl;
     cin.getline(s1,256);
     String str1(s1);
-    str1.Print();
+    cout << str1;
 
     cout << endl << "Enter number and then character to demonstrate the second conctructor:" << endl;
     cin >> n;
     cin.get();
     cin >> s1;
     String str2(s1, n);
-    str2.Print();
+    cout << str2;
 
     cout << endl << "Enter string to demonstrate the copy constructor:" << endl;
     cin.get();
     cin.getline(s3, 256);
     String str(s3);
     String copy(str);
-    copy.Print();
+    cout << copy;
 
     cout << endl << "Enter 2 strings to demonstrate the = operator" << endl;
     cin.getline(s4, 256);
@@ -136,7 +144,7 @@ int main()
     String str4(s4);
     String str5(s5);
     str5 = str4;
-    str5.Print();
+    cout << str5;
 
     cout << endl << "Enter 2 strings to demonstrate the == operator" << endl;
     cin.getline(s6, 256);
@@ -151,7 +159,7 @@ int main()
     String str8(s8);
     String str9(s9);
     String temp = str9 + str8;
-    temp.Print();
+    cout << temp;
 
     return 0;
 }
